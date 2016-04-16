@@ -52,5 +52,33 @@ students_hash = {
 # ===============
 # YOUR WORK BELOW
 # ===============
+puts students_hash[:wanda][:classes][1]
+puts students_hash[:tina][:hometwn]
+
+# work on this later
+# students_hash.keys.each do |key|
+#   students_hash[key]
 
 
+# Instructions
+def ave_age(age_hash)
+  array = []
+  age_hash.each do |key, value|
+    array << value[:age].to_i
+  end
+  array.inject(:+) / array.length
+end
+# calling the method and passing in the data to use the Instructions on.
+puts ave_age(students_hash)
+
+#
+def print_class_list(class_hash)
+  class_hash.each do |key, value|
+    puts key.capitalize.to_s + "'s classes"
+    puts "--------------"
+    value[:classes].each do |class_string|
+      puts class_string
+    end
+  end
+end
+print_class_list(students_hash)
